@@ -2,8 +2,8 @@ import javax.swing.*;
 
 public class Client {
     public static void main(String[] args) {
-        String ip = JOptionPane.showInputDialog(null, "What IP-adress do you want to connect to?", "Connect to..", JOptionPane.QUESTION_MESSAGE);
-        int portnr = Integer.parseInt(JOptionPane.showInputDialog(null,"Port?","Connect to..",JOptionPane.QUESTION_MESSAGE));
-        String nickname = JOptionPane.showInputDialog(null, "What's your name?", "My name is..", JOptionPane.QUESTION_MESSAGE);
+        String ip = (String) JOptionPane.showInputDialog(null,"IP?","Connect to..",JOptionPane.QUESTION_MESSAGE);
+        int port = Integer.parseInt(JOptionPane.showInputDialog(null,"Port?","Connect to..",JOptionPane.QUESTION_MESSAGE));
+        String nickname = (String) JOptionPane.showInputDialog(null, "Nickname?","What's your name?", JOptionPane.QUESTION_MESSAGE);
     }
 }
