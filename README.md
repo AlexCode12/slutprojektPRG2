@@ -26,3 +26,13 @@ Detta har genomförts idag:
 ### Detta behöver jag hjälp med till nästa lektion
 
 * Kan inte komma på något specifikt nu. Löste de problemen jag hade idag utan hjälp, behöver bara vara lite mer effektiv så att mer görs. 
+
+## Logg 28/04-2020
+
+Detta har genomförts idag:
+
+* GUI:t i sig är nu klart. Behöver bara implementera knapparna hädanefter.
+
+### Detta behöver jag hjälp med till nästa lektion
+
+* Kommer behöva hjälp med nätverksimplementationen av GUI:t, dvs att det ansluter till den port jag vill osv. 
