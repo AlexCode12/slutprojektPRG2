@@ -33,25 +33,43 @@ public class GUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String ip = JOptionPane.showInputDialog(null, "What IP adress?");
+                JOptionPane.showMessageDialog(null, "IP adress som valts: " + ip);
 
             }
         });
         SETPORTButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                String port = JOptionPane.showInputDialog(null, "Vilket portnummer vill du sätta?");
+                int portInt = Integer.parseInt(port);
+                if (portInt > 65535) {
+                    JOptionPane.showMessageDialog(null, "Vänligen sätt ett tillgängligt portnummer.");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Port OK: " + portInt + " Har valts. ");
+                }
+                // Backend lösning behövs. Än ej klar.
             }
         });
         LISTENButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                String port = JOptionPane.showInputDialog(null, "Vilket portnummer vill du sätta?");
+                int portInt = Integer.parseInt(port);
+                if (portInt > 65535) {
+                    JOptionPane.showMessageDialog(null, "Vänligen sätt ett tillgängligt portnummer.");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Port OK: " + portInt + " Har valts. ");
+                }
+                // Backend lösning behövs. Än ej klar.
             }
         });
         EXITButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showConfirmDialog(null, "Är du säker på att du vill avsluta?");
+                int input = JOptionPane.showConfirmDialog(null, "Är du säker på att du vill avsluta?");
+                if (input == 0) {
+                System.exit(0);
+                }
 
             }
         });
