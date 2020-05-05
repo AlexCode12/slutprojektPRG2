@@ -36,3 +36,13 @@ Detta har genomförts idag:
 ### Detta behöver jag hjälp med till nästa lektion
 
 * Kommer behöva hjälp med nätverksimplementationen av GUI:t, dvs att det ansluter till den port jag vill osv. 
+
+## Logg 05/05-2020
+
+Detta har genomförts idag:
+
+* All front-end är klar. Prioriterade det idag så att jag kunde genomföra nätverksdelen nu.
+
+### Dettta behöver jag hjälp med till nästa lektion
+
+* Nätverksdelen
