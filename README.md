@@ -46,3 +46,13 @@ Detta har genomförts idag:
 ### Dettta behöver jag hjälp med till nästa lektion
 
 * Nätverksdelen
+
+## Logg 12/05-2020
+
+Detta har genomförts idag:
+
+* Nätverksdelen. Det går nu att ansluta och att skriva ett meddelande.
+
+### Detta kan fortfarande förbättras.
+
+* Ytterligare klienter, samt att en längre konversation kan synas och sparas.
