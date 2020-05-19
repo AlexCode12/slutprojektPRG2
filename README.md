@@ -56,3 +56,13 @@ Detta har genomförts idag:
 ### Detta kan fortfarande förbättras.
 
 * Ytterligare klienter, samt att en längre konversation kan synas och sparas.
+
+## Logg 19/05-2020
+
+Detta har genomförts idag: 
+
+* Filhantering. Fungerar utan problem nu.
+
+### Detta kan fortfarande förbättras
+
+* Fail-safe på nätverksanlutningen, ex: att det inte går att skriva om klienten inte är ansluten
