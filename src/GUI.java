@@ -18,8 +18,16 @@ public class GUI {
     Socket socket = null;
     PrintWriter out;
     String line;
+    String portNR;
+    boolean connected;
+
 
     public GUI() {
+
+        if (connected = false) {
+            SENDButton.setVisible(false);
+        }
+
         SAVEButton.addActionListener(new ActionListener() {
 
             @Override
@@ -72,10 +80,13 @@ public class GUI {
                 String portNR = JOptionPane.showInputDialog(null, "What port number?");
                 try {
                     socket = new Socket(ip, Integer.parseInt(portNR));
+                    connected = true;
                     System.out.println("Client connected");
+                    CONVO.setText("YOU ARE NOW CONNECTED.");
                 } catch (Exception e1) {
                     System.out.println("Client failed to connect");
-                    System.exit(0);
+                    JOptionPane.showMessageDialog(null,"Please insert another port number.");
+                    CONVO.setText("ERROR: IP ADRESS OR PORT NUMBER WAS NOT VALID.");
                 }
             }
         });
@@ -89,7 +100,6 @@ public class GUI {
                 } else {
                     JOptionPane.showMessageDialog(null, "Port OK: " + portInt + " Har valts. ");
                 }
-                // Backend lösning behövs. Än ej klar.
             }
         });
         LISTENButton.addActionListener(new ActionListener() {
