@@ -1,9 +1,7 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.Socket;
 
 public class GUI {
@@ -13,47 +11,58 @@ public class GUI {
     private JTextField MESSAGE;
     private JTextArea CONVO;
     private JButton SENDButton;
-    private JPanel MAINPANEL;
+    protected JPanel MAINPANEL;
     private JButton HELPButton;
     private JButton SETPORTButton;
     private JButton EXITButton;
     Socket socket = null;
     PrintWriter out;
+    String line;
 
     public GUI() {
         SAVEButton.addActionListener(new ActionListener() {
+
             @Override
             public void actionPerformed(ActionEvent e) {
+                FileWriter fw = null;
                 JFileChooser fileDialog = new JFileChooser();
                 File selectedFile;
                 selectedFile = new File("chat.txt");
                 fileDialog.setSelectedFile(selectedFile);
-                fileDialog.setDialogTitle("Select File to be Saved");
+                fileDialog.setDialogTitle("Välj vilken fil som ska sparas");
                 int option = (int) fileDialog.showSaveDialog(null);
                 if (option != JFileChooser.APPROVE_OPTION)
                     return;
                 selectedFile = fileDialog.getSelectedFile();
                 if (selectedFile.exists()) {
                     int response = JOptionPane.showConfirmDialog( null,
-                            "The file \"" + selectedFile.getName()
-                                    + "\" already exists.\nDo you want to replace it?",
-                            "Confirm Save",
+                            "Filen \"" + selectedFile.getName()
+                                    + "\" finns redan. \nVill du skriva över den?",
+                            "Bekräfta",
                             JOptionPane.YES_NO_OPTION,
                             JOptionPane.WARNING_MESSAGE );
                     if (response != JOptionPane.YES_OPTION)
                         return;
                 }
                 try {
-                    FileWriter stream = new FileWriter(selectedFile);
-                    out = new PrintWriter( stream );
+                    fw = new FileWriter(selectedFile);
+                    BufferedWriter bw = new BufferedWriter(fw);
+                    PrintWriter outfile = new PrintWriter(bw);
+                    line = CONVO.getText();
+                    outfile.println(line);
+                    outfile.flush();
+                    outfile.close();
+                    JOptionPane.showMessageDialog(null, "Filen har nu sparats!");
                 }
                 catch (Exception e1) {
                     JOptionPane.showMessageDialog(null,
                             "Sorry, but an error occurred while trying to save the file:\n" + e);
                     return;
                 }
-
+                
             }
+
+               
         });
         CONNECTButton.addActionListener(new ActionListener() {
             @Override
@@ -130,16 +139,6 @@ public class GUI {
             }
         });
 
-
-    }
-
-    public static void main(String[] args) {
-        JOptionPane.showMessageDialog(null, "Please restart the server if you haven't done so already.");
-        JFrame GUI = new JFrame("GUI CHAT");
-        GUI.setContentPane(new GUI().MAINPANEL);
-        GUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        GUI.pack();
-        GUI.setVisible(true);
 
     }
 }
