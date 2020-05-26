@@ -24,9 +24,8 @@ public class GUI {
 
     public GUI() {
 
-        if (connected = false) {
-            SENDButton.setVisible(false);
-        }
+        SENDButton.setVisible(false);
+        CONVO.setText("PLEASE CONNECT BEFORE TRYING TO TYPE.");
 
         SAVEButton.addActionListener(new ActionListener() {
 
@@ -83,18 +82,20 @@ public class GUI {
                     connected = true;
                     System.out.println("Client connected");
                     CONVO.setText("YOU ARE NOW CONNECTED.");
+                    SENDButton.setVisible(true);
                 } catch (Exception e1) {
                     System.out.println("Client failed to connect");
                     JOptionPane.showMessageDialog(null,"Please insert another port number.");
                     CONVO.setText("ERROR: IP ADRESS OR PORT NUMBER WAS NOT VALID.");
+                    SENDButton.setVisible(false);
                 }
             }
         });
         SETPORTButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String port = JOptionPane.showInputDialog(null, "Vilket portnummer vill du sätta?");
-                int portInt = Integer.parseInt(port);
+                String portNR = JOptionPane.showInputDialog(null, "What port number?");
+                int portInt = Integer.parseInt(portNR);
                 if (portInt > 65535) {
                     JOptionPane.showMessageDialog(null, "Vänligen sätt ett tillgängligt portnummer.");
                 } else {
