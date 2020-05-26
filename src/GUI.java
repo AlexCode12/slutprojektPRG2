@@ -24,6 +24,8 @@ public class GUI {
 
     public GUI() {
 
+        // Failsafe för anslutningen, inte den smidigaste men den fungerar
+
         SENDButton.setVisible(false);
         CONVO.setText("PLEASE CONNECT BEFORE TRYING TO TYPE.");
 
@@ -31,6 +33,9 @@ public class GUI {
 
             @Override
             public void actionPerformed(ActionEvent e) {
+
+                // Filhantering
+
                 FileWriter fw = null;
                 JFileChooser fileDialog = new JFileChooser();
                 File selectedFile;
@@ -72,6 +77,9 @@ public class GUI {
                
         });
         CONNECTButton.addActionListener(new ActionListener() {
+
+            //Kortfattat: Frågar om anslutningsinfo och matchar den med serverns.
+
             @Override
             public void actionPerformed(ActionEvent e) {
                 String ip = JOptionPane.showInputDialog(null, "What IP adress?");
@@ -92,6 +100,9 @@ public class GUI {
             }
         });
         SETPORTButton.addActionListener(new ActionListener() {
+
+            // Ej helt klar. Tänkt att sätta port, dock ej någon back-end ändring.
+
             @Override
             public void actionPerformed(ActionEvent e) {
                 String portNR = JOptionPane.showInputDialog(null, "What port number?");
