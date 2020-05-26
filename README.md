@@ -7,6 +7,9 @@ Detta är tänkt att bli en chatt-klient i framtiden. Följande centrala innehå
 * Nätverk i form utav att flertalet personer (åtminstone 2) kan kopplas upp till klienten
 * Dokumentation i form utav commit-historiken och dylikt.
 
+För en utförlig Post Mortem, vänligen följ denna länk:
+https://github.com/AlexCode12/slutprojektPRG2/wiki/Post-Mortem---Sluprojekt-PRG2
+
 ## Logg 07/04-2020:
 
 Detta har genomförts idag:
