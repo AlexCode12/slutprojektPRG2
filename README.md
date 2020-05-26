@@ -69,3 +69,13 @@ Detta har genomförts idag:
 ### Detta kan fortfarande förbättras
 
 * Fail-safe på nätverksanlutningen, ex: att det inte går att skriva om klienten inte är ansluten
+
+## Logg 26/05-2020
+
+Detta har genomförts idag:
+
+* Fail-safe implementerad, samt kommenterad kod och Post Mortem.
+
+### Sammanfattning
+
+Processen har blivit väldokumenterad och jag anser att detta projekt har gått någorlunda bra. Dessvärre är det inte ett helt fungerande chatt-program, men alla komponenter finns för ytterligare polering samt implementering.
