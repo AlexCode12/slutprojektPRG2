@@ -1,6 +1,9 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.io.*;
 import java.net.Socket;
 
@@ -20,6 +23,7 @@ public class GUI {
     String line;
     String portNR;
     boolean connected;
+    private Object KeyEvent;
 
 
     public GUI() {
@@ -157,10 +161,11 @@ public class GUI {
                     // set the text of the label to the text of the field
                     CONVO.setText(MESSAGE.getText());
                     MESSAGE.setText("  ");
+
+                    //Kunde ej implementera en bättre lösning, trots upprepade försök med olika strategier. 
                 }
             }
         });
 
-
+        }
     }
-}
