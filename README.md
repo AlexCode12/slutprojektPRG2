@@ -10,6 +10,9 @@ Detta är tänkt att bli en chatt-klient i framtiden. Följande centrala innehå
 För en utförlig Post Mortem, vänligen följ denna länk:
 https://github.com/AlexCode12/slutprojektPRG2/wiki/Post-Mortem---Sluprojekt-PRG2
 
+Planering:
+https://drive.google.com/file/d/1a5cYEqQUtcwmj2AChCteXYLf37vzu6GS/view
+
 ## Logg 07/04-2020:
 
 Detta har genomförts idag:
